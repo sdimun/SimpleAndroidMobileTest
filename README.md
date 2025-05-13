@@ -8,8 +8,10 @@ Install [calculator app]() to emulator if app isn't pre-installed. You need to d
 adb install ~/Downloads/Calculator_8.7.apk
 ```
 
+
 ### Launch test from terminal
 
+Before running next command for launching tests you need to start your AVD.
 
 ```bash
 ./gradlew connectedAndroidTest

@@ -51,10 +51,10 @@
       </SelectionState>
       <SelectionState runConfigName="CalculatorTest">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-05-13T20:57:34.527612Z">
+        <DropdownSelection timestamp="2025-05-13T22:25:30.919496Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/sebastiandimun/.android/avd/Pixel_8_API_35.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/sebastiandimun/.android/avd/JenkinsPixel2.avd" />
             </handle>
           </Target>
         </DropdownSelection>

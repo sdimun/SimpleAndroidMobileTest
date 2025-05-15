@@ -20,6 +20,7 @@ class CalculatorTest {
 
     private lateinit var device: UiDevice
     private lateinit var controller: CalcController
+
     @Before
     fun setUp() {
         device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
@@ -42,25 +43,28 @@ class CalculatorTest {
         // wait for calc app appears
         device.wait(Until.hasObject(By.pkg("com.google.android.calculator").depth(0)), 5000)
 
+        // perform multiplication + check result
         controller.performMultiplication("7", "3")
         assert(controller.getResult() == "21")
 
         controller.clearCalc()
 
+        // perform addition + check result
         controller.performAddition("7", "3")
         assert(controller.getResult() == "10")
 
         controller.clearCalc()
 
+        // perform subtraction + check result
         controller.performSubtraction("342", "341")
         assert(controller.getResult() == "1")
 
         controller.clearCalc()
 
+        // perform division + check result
         controller.performDivision("12", "4")
         assert(controller.getResult() == "3")
 
-        device.executeShellCommand("am force-stop com.google.android.calculator")
     }
 
     @Test
@@ -78,10 +82,11 @@ class CalculatorTest {
         // wait for calc app appears
         device.wait(Until.hasObject(By.pkg("com.google.android.calculator").depth(0)), 5000)
 
-
+        // perform division by 0
         controller.performDivision("7", "0")
         assert(controller.getResultForError() == "Can't divide by 0")
     }
+
 
     @After
     fun killApp() {
